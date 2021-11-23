@@ -5,17 +5,17 @@ let isJumping = false;
 let isGameOver = false;
 let position = 0;
 
-function handleKeyUp(event) {
+function personagemSalta(event) {
 
   if (event.keyCode === 32) {
 
     if (!isJumping) {
-      jump();
+      pular();
     }
   }
 }
 
-function jump() {
+function pular() {
 
   isJumping = true;
 
@@ -43,7 +43,7 @@ function jump() {
   }, 20);
 }
 
-function createCactus() {
+function obstaculo() {
 
   const cactus = document.createElement('div');
 
@@ -77,9 +77,9 @@ function createCactus() {
     }
   }, 20);
 
-  setTimeout(createCactus, randomTime);
+  setTimeout(obstaculo, randomTime);
 
 }
 
-createCactus();
-document.addEventListener('keyup', handleKeyUp);
+obstaculo();
+document.addEventListener('keyup', personagemSalta);
